@@ -122,7 +122,7 @@ x_pca = pca.fit_transform(x)
 df_visualizacao = pd.DataFrame(data=x_pca, columns=['PC1', 'PC2'])
 df_visualizacao['Cluster'] = kmeans.labels_
 
-mapa_clusters_posicoes = {0: 'Goleiro', 1: 'Defensor', 2: 'Meio-Campo', 3: 'Atacante'}
+mapa_clusters_posicoes = {0: '0', 1: '1', 2: '2', 3: '3'}
 x['Posicao'] = x['Cluster'].map(mapa_clusters_posicoes)
 
 df_visualizacao['Posicao'] = x['Posicao']

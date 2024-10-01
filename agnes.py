@@ -45,7 +45,7 @@ x = x_normalized
 # Parâmetros para o AGNES
 param_grid = {
     'linkage': ['ward', 'complete', 'average', 'single'],
-    'distance_threshold': [10, 15, 20, 25]  # Exemplo de diferentes thresholds
+    'distance_threshold': [5, 7, 9, 10, 15, 20, 25, 50]  # Exemplo de diferentes thresholds
 }
 
 # Inicializar a variável para armazenar o melhor score e os parâmetros correspondentes
@@ -128,7 +128,7 @@ x_pca = pca.fit_transform(x)
 df_visualizacao = pd.DataFrame(data=x_pca, columns=['PC1', 'PC2'])
 df_visualizacao['Cluster'] = agnes.labels_
 
-mapa_clusters_posicoes = {0: 'Goleiro', 1: 'Linha'}
+mapa_clusters_posicoes = {0: '0', 1: '1'}
 x['Posicao'] = x['Cluster'].map(mapa_clusters_posicoes)
 
 df_visualizacao['Posicao'] = x['Posicao']
